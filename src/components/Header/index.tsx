@@ -1,10 +1,11 @@
 import React, { useMemo } from 'react';
 interface HeaderProps {
   setMinimumRating: (value: any) => void;
-  setFilteredGenres: (value: any) => void;
+  setFilteredGenres: (value: number[]) => void;
+  minimumRating: any
 }
 
-const Header = ({ setMinimumRating, setFilteredGenres }: HeaderProps) => {
+const Header = ({ setMinimumRating, setFilteredGenres, minimumRating }: HeaderProps) => {
   const ratingsList = useMemo(() => {
     let arr = [];
     for (let i = 0; i < 10.5; i = i + 0.5) {
@@ -22,17 +23,18 @@ const Header = ({ setMinimumRating, setFilteredGenres }: HeaderProps) => {
         Now playing
       </span>
       <div className="rating-filters">
+      <span className='rating-filters-label'>
+            Filter by ratings
+          </span>
         <select
           data-testid="select-option"
           onChange={(e) => setMinimumRating(e.target.value)}
           className="filters-options"
         >
-          <option disabled selected value="Filter by ratings">
-            Filter by ratings
-          </option>
-          {ratingsList.map((number) => (
-            <option value={number} key={number}>
-              {number}
+          <option disabled>Minimum rating</option>
+          {ratingsList.map((ratingOption) => (
+            <option value={ratingOption} key={ratingOption} selected={minimumRating === ratingOption}>
+              {ratingOption}
             </option>
           ))}
         </select>

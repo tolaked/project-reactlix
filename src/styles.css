@@ -31,6 +31,11 @@ img {
 .filterBy{
   font-weight: bold;
 }
+.rating-filters-label{
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 10px;
+}
 .clear-button{
   background: gray;
   padding: 5px 10px;

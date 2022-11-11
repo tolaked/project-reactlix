@@ -50,6 +50,7 @@ const Movies = ({ movies, genres }: MoviesProp) => {
       <Header
         setMinimumRating={setMinimumRating}
         setFilteredGenres={setFilteredGenres}
+        minimumRating={minimumRating}
       />
       <div className="sub-container">
         <Sidebar
