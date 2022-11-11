@@ -17,33 +17,65 @@ img {
   width: 100%;
 }
 
-h1 {
+.header{
   background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
   font-size: 2rem;
-  padding: 1rem 0;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0
 }
-
+.filterBy{
+  font-weight: bold;
+}
+.clear-button{
+  background: gray;
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 2px;
+  color: #f9f9f9;
+  cursor: pointer;
+}
+.rating-filters{
+  margin-right: 80px
+}
+.filters-options{
+  height: 27px;
+  margin-right: 20px;
+  outline: none;
+}
 h2 {
   font-size: 1.2rem;
+  margin: 0;
+  height: 70px
 }
 
-.container {
-  display: grid;
-  grid-template-columns:
-    [full-start] clamp(1rem, 2vw, 3rem) [main-start] 1fr [main-end] clamp(
-      1rem,
-      2vw,
-      3rem
-    )
-    [full-end];
+.side-bar{
+  display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    position: fixed;
+    height: calc(100vh - 90px);
+    bottom: 0;
+    z-index: 2;
 }
-
-.container > * {
-  grid-column: main;
+.genre{
+  cursor: pointer;
 }
-
-.container > .full {
-  grid-column: full;
+.sub-container {
+ display: flex;
+   
+}
+.movies-wrapper{
+  position: fixed;
+  right: 0px;
+  height: calc(100% - 70px);
+  bottom: 0px;
+  width: calc(100% - 200px);
 }
 
 .filters {
@@ -53,29 +85,43 @@ h2 {
   padding-bottom: 1.5rem;
 }
 
-/* Perhaps a grid? */
-.genres-list {
-}
-
 .movies {
-  display: grid;
-  gap: 2rem;
-  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  padding: 20px 30px 0;
+  overflow-y: scroll;
+  background: rgb(250, 250, 251);
+  font-family: poppins;
 }
-
+.further-details{
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
 .movie {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: minmax(3rem, 1fr) 2fr;
+  width: 45%;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  margin-right: 20px;
+  background: white;
+  padding: 20px 10px;
+  border-radius: 2px;
+  box-shadow: 0px 0px 10px #00000029;
 }
 
 .movie-title {
   font-size: 1.6rem;
 }
-
+.movie-overview{
+  width: 80%;
+}
 .movie-image {
   border-radius: 0.2rem;
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
+  height: 250px;
+  width: 250px;
 }
 
 .movie-content {
